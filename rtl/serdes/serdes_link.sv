@@ -39,7 +39,7 @@ module serdes_link #(
         .rd_empty(tx_fifo_empty)
     );
 
-    serializer #(.DATA_WIDTH(DATA_WIDTH)) serializer (
+    serializer #(.DATA_WIDTH(DATA_WIDTH)) serializer_unit (
         .bit_clk(bit_clk),
         .resetn(bit_resetn),
         .fifo_data_in(serializer_rd_data),
@@ -52,7 +52,7 @@ module serdes_link #(
     logic rx_fifo_wr_inc;
     logic [DATA_WIDTH - 1:0] rx_fifo_wr_data;
     logic rx_fifo_full;
-    deserializer #(.DATA_WIDTH(DATA_WIDTH)) deserializer (
+    deserializer #(.DATA_WIDTH(DATA_WIDTH)) deserializer_unit (
         .bit_clk(bit_clk),
         .resetn(bit_resetn),
         .serial_in(serializer_out),

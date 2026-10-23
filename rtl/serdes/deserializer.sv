@@ -5,7 +5,7 @@ module deserializer #(
     input logic resetn,
     input logic serial_in,
     input logic word_start,
-    output logic [DATA_WIDTH - 1:0] fifo_data_out
+    output logic [DATA_WIDTH - 1:0] fifo_data_out,
     output logic fifo_wr_inc
 );
 
@@ -36,4 +36,4 @@ module deserializer #(
             fifo_wr_inc <= 1'b0;
     end
 
-endmodule;
+endmodule

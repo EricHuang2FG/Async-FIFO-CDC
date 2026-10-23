@@ -14,7 +14,7 @@ module fifo_mem #(
     logic [DATA_WIDTH - 1:0] mem [2 ** ADDR_BIT_WIDTH - 1:0]; // the depth is 2 to the power of the binary bit width
     
     // handle data reading
-    assign rd_data = rd_en ? mem[rd_addr] : '0;
+    assign rd_data = mem[rd_addr];
 
     // handle data writing
     always_ff @(posedge wr_clk) begin
